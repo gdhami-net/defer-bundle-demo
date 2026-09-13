@@ -25,6 +25,14 @@
       "cliInitialRaw": "194.74 kB",
       "cliInitialTransfer": "41.96 kB"
     },
+    "view-child-ref": {
+      "markerWhere": "lazy",
+      "lazyChunkCount": 1,
+      "lazyJsBytes": 66244,
+      "initialJsBytes": 129176,
+      "cliInitialRaw": "129.28 kB",
+      "cliInitialTransfer": "39.21 kB"
+    },
     "type-only": {
       "markerWhere": "lazy",
       "lazyChunkCount": 1,

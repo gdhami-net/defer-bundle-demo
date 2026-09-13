@@ -6,8 +6,8 @@ something does, Angular silently falls back to loading it eagerly: the
 `@placeholder` still shows, the content still appears on its trigger, and the
 code ships in the initial bundle.
 
-This demo builds the same `@defer` block six ways, each differing only in how the
-shell around it refers to `HeavyComponent`, and then looks in the real build
+This demo builds the same `@defer` block seven ways, each differing only in how
+the shell around it refers to `HeavyComponent`, and then looks in the real build
 output to see where the component's code actually landed.
 
 Angular 22.1.6, TypeScript 6.0.3, `@angular/build` 22.1.8, Node 26.1.0, the
@@ -27,15 +27,19 @@ Recorded on 2026-09-13 with the versions above:
 | `clean` | none | 66,244 B | the lazy chunk | 118,869 B |
 | `template-outside` | `<app-heavy>` in an `@if` that never runs | none | the initial bundle | 185,161 B |
 | `view-child` | `viewChild(HeavyComponent)` | none | the initial bundle | 194,630 B |
+| `view-child-ref` | `viewChild('heavyRef')`, a string locator | 66,244 B | the lazy chunk | 129,176 B |
 | `type-only` | the class in type position only | 66,244 B | the lazy chunk | 118,990 B |
 | `class-as-value` | the class in a `Type<unknown>[]` field | none | the initial bundle | 184,543 B |
 | `eager-sibling` | none here; an eager sibling component imports it | 94 B | the initial bundle | 186,028 B |
 
-Two things worth reading twice. `type-only` still defers, which is what makes the
-others meaningful: it is the kind of reference that does *not* matter.
-`eager-sibling` still emits a chunk named `heavy`, and that chunk is 94 bytes of
-`export { … } from "./chunk-…"` pointing back into the initial bundle — so the
-presence of a lazy chunk in the build log proves nothing on its own.
+Three things worth reading twice. `type-only` still defers, which is what makes
+the others meaningful: it is the kind of reference that does *not* matter.
+`view-child-ref` shows the workaround for the `view-child` row, measured rather
+than assumed: a template reference variable as the locator keeps the chunk, and
+the initial bundle grows only by the query's own code. And `eager-sibling` still
+emits a chunk named `heavy`, which is 94 bytes of `export { … } from "./chunk-…"`
+pointing back into the initial bundle, so the presence of a lazy chunk in the
+build log proves nothing on its own.
 
 No build printed a warning in any of the eager cases. The compiler does have
 diagnostics for this mistake (`NG8012` for pipes, `NG8013` for directives and
@@ -53,7 +57,7 @@ npm run check
 
 `npm run check` does two things.
 
-`scripts/check.mjs` builds all six variants plus the probes and asserts, per
+`scripts/check.mjs` builds all seven variants plus the probes and asserts, per
 variant, where the marker landed, how many lazy chunks exist, and that the
 `@placeholder` text is in the initial bundle. "Initial" is computed from the
 output files rather than read off the CLI's table: `main.js` is the entry, every
@@ -64,10 +68,10 @@ within 5%, because those move with Angular patch releases. `node
 scripts/check.mjs --record` rewrites that baseline, which is how it was produced;
 `npm run check` never records.
 
-`ng test` runs `src/runtime.spec.ts`, six tests that mount each shell with
+`ng test` runs `src/runtime.spec.ts`, seven tests that mount each shell with
 `DeferBlockBehavior.Playthrough` and assert that the placeholder renders first
 and the deferred content renders on its trigger. That is the other half of the
-point: all six behave identically, so the browser gives you no hint that three of
+point: all seven behave identically, so the browser gives you no hint that four of
 them shipped the code eagerly.
 
 `npm start` serves the `clean` variant if you want to click through it.

@@ -5,6 +5,7 @@ import { HEAVY_MARKER } from './heavy/heavy';
 import { ShellComponent as CleanShell } from './variants/clean/shell';
 import { ShellComponent as TemplateOutsideShell } from './variants/template-outside/shell';
 import { ShellComponent as ViewChildShell } from './variants/view-child/shell';
+import { ShellComponent as ViewChildRefShell } from './variants/view-child-ref/shell';
 import { ShellComponent as TypeOnlyShell } from './variants/type-only/shell';
 import { ShellComponent as ClassAsValueShell } from './variants/class-as-value/shell';
 import { ShellComponent as EagerSiblingShell } from './variants/eager-sibling/shell';
@@ -24,6 +25,7 @@ const SHELLS: ReadonlyArray<readonly [string, Type<{ open: WritableSignal<boolea
   ['clean', CleanShell],
   ['template-outside', TemplateOutsideShell],
   ['view-child', ViewChildShell],
+  ['view-child-ref', ViewChildRefShell],
   ['type-only', TypeOnlyShell],
   ['class-as-value', ClassAsValueShell],
   ['eager-sibling', EagerSiblingShell],

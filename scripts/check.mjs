@@ -28,6 +28,7 @@ const VARIANTS = [
   ['clean', 'the only <app-heavy> is inside the @defer block'],
   ['template-outside', 'plus one <app-heavy> in a branch that never runs'],
   ['view-child', 'plus viewChild(HeavyComponent)'],
+  ['view-child-ref', "plus viewChild('heavyRef'), a string locator"],
   ['type-only', 'plus HeavyComponent in type position only'],
   ['class-as-value', 'plus the class kept as a value in a field'],
   ['eager-sibling', 'clean here; an eager sibling component imports it'],

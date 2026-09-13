@@ -21,8 +21,15 @@
             "outputPath": "dist/clean",
             "index": "src/index.html",
             "tsConfig": "tsconfig.app.json",
-            "assets": [{ "glob": "**/*", "input": "public" }],
-            "styles": ["src/styles.css"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
             "outputHashing": "none"
           }
         },
@@ -33,8 +40,15 @@
             "outputPath": "dist/template-outside",
             "index": "src/index.html",
             "tsConfig": "tsconfig.app.json",
-            "assets": [{ "glob": "**/*", "input": "public" }],
-            "styles": ["src/styles.css"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
             "outputHashing": "none"
           }
         },
@@ -45,8 +59,34 @@
             "outputPath": "dist/view-child",
             "index": "src/index.html",
             "tsConfig": "tsconfig.app.json",
-            "assets": [{ "glob": "**/*", "input": "public" }],
-            "styles": ["src/styles.css"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "outputHashing": "none"
+          }
+        },
+        "build-view-child-ref": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/variants/view-child-ref/main.ts",
+            "outputPath": "dist/view-child-ref",
+            "index": "src/index.html",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
             "outputHashing": "none"
           }
         },
@@ -57,8 +97,15 @@
             "outputPath": "dist/type-only",
             "index": "src/index.html",
             "tsConfig": "tsconfig.app.json",
-            "assets": [{ "glob": "**/*", "input": "public" }],
-            "styles": ["src/styles.css"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
             "outputHashing": "none"
           }
         },
@@ -69,8 +116,15 @@
             "outputPath": "dist/class-as-value",
             "index": "src/index.html",
             "tsConfig": "tsconfig.app.json",
-            "assets": [{ "glob": "**/*", "input": "public" }],
-            "styles": ["src/styles.css"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
             "outputHashing": "none"
           }
         },
@@ -81,8 +135,15 @@
             "outputPath": "dist/eager-sibling",
             "index": "src/index.html",
             "tsConfig": "tsconfig.app.json",
-            "assets": [{ "glob": "**/*", "input": "public" }],
-            "styles": ["src/styles.css"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
             "outputHashing": "none"
           }
         },
@@ -93,7 +154,9 @@
             "outputPath": "dist/probes",
             "index": "src/index.html",
             "tsConfig": "tsconfig.probes.json",
-            "styles": ["src/styles.css"],
+            "styles": [
+              "src/styles.css"
+            ],
             "outputHashing": "none"
           }
         },
