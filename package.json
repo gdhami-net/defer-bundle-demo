@@ -1,0 +1,31 @@
+{
+  "name": "defer-bundle-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shows which references silently undo an Angular @defer block's lazy loading, and proves where the deferred component's code actually landed by grepping the build output.",
+  "license": "MIT",
+  "scripts": {
+    "start": "ng serve",
+    "build": "ng run defer-bundle-demo:build-clean",
+    "check": "node scripts/check.mjs && ng test",
+    "check:bundles": "node scripts/check.mjs",
+    "test": "ng test",
+    "gen": "node scripts/gen-rate-table.mjs"
+  },
+  "dependencies": {
+    "@angular/common": "22.1.6",
+    "@angular/compiler": "22.1.6",
+    "@angular/core": "22.1.6",
+    "@angular/platform-browser": "22.1.6",
+    "rxjs": "7.8.2",
+    "tslib": "2.8.1"
+  },
+  "devDependencies": {
+    "@angular/build": "22.1.8",
+    "@angular/cli": "22.1.8",
+    "@angular/compiler-cli": "22.1.6",
+    "jsdom": "^28.1.0",
+    "typescript": "6.0.3",
+    "vitest": "^4.1.11"
+  }
+}

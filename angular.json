@@ -1,0 +1,116 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm",
+    "analytics": false
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "defer-bundle-demo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build-clean": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/variants/clean/main.ts",
+            "outputPath": "dist/clean",
+            "index": "src/index.html",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [{ "glob": "**/*", "input": "public" }],
+            "styles": ["src/styles.css"],
+            "outputHashing": "none"
+          }
+        },
+        "build-template-outside": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/variants/template-outside/main.ts",
+            "outputPath": "dist/template-outside",
+            "index": "src/index.html",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [{ "glob": "**/*", "input": "public" }],
+            "styles": ["src/styles.css"],
+            "outputHashing": "none"
+          }
+        },
+        "build-view-child": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/variants/view-child/main.ts",
+            "outputPath": "dist/view-child",
+            "index": "src/index.html",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [{ "glob": "**/*", "input": "public" }],
+            "styles": ["src/styles.css"],
+            "outputHashing": "none"
+          }
+        },
+        "build-type-only": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/variants/type-only/main.ts",
+            "outputPath": "dist/type-only",
+            "index": "src/index.html",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [{ "glob": "**/*", "input": "public" }],
+            "styles": ["src/styles.css"],
+            "outputHashing": "none"
+          }
+        },
+        "build-class-as-value": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/variants/class-as-value/main.ts",
+            "outputPath": "dist/class-as-value",
+            "index": "src/index.html",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [{ "glob": "**/*", "input": "public" }],
+            "styles": ["src/styles.css"],
+            "outputHashing": "none"
+          }
+        },
+        "build-eager-sibling": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/variants/eager-sibling/main.ts",
+            "outputPath": "dist/eager-sibling",
+            "index": "src/index.html",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [{ "glob": "**/*", "input": "public" }],
+            "styles": ["src/styles.css"],
+            "outputHashing": "none"
+          }
+        },
+        "build-probes": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "probes/main.ts",
+            "outputPath": "dist/probes",
+            "index": "src/index.html",
+            "tsConfig": "tsconfig.probes.json",
+            "styles": ["src/styles.css"],
+            "outputHashing": "none"
+          }
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "buildTarget": "defer-bundle-demo:build-clean"
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "buildTarget": "defer-bundle-demo:build-clean",
+            "tsConfig": "tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  }
+}

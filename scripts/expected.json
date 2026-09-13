@@ -1,0 +1,60 @@
+{
+  "recordedOn": "2026-09-13",
+  "variants": {
+    "clean": {
+      "markerWhere": "lazy",
+      "lazyChunkCount": 1,
+      "lazyJsBytes": 66244,
+      "initialJsBytes": 118869,
+      "cliInitialRaw": "118.97 kB",
+      "cliInitialTransfer": "36.42 kB"
+    },
+    "template-outside": {
+      "markerWhere": "initial",
+      "lazyChunkCount": 0,
+      "lazyJsBytes": 0,
+      "initialJsBytes": 185161,
+      "cliInitialRaw": "185.27 kB",
+      "cliInitialTransfer": "39.40 kB"
+    },
+    "view-child": {
+      "markerWhere": "initial",
+      "lazyChunkCount": 0,
+      "lazyJsBytes": 0,
+      "initialJsBytes": 194630,
+      "cliInitialRaw": "194.74 kB",
+      "cliInitialTransfer": "41.96 kB"
+    },
+    "type-only": {
+      "markerWhere": "lazy",
+      "lazyChunkCount": 1,
+      "lazyJsBytes": 66244,
+      "initialJsBytes": 118990,
+      "cliInitialRaw": "119.09 kB",
+      "cliInitialTransfer": "36.48 kB"
+    },
+    "class-as-value": {
+      "markerWhere": "initial",
+      "lazyChunkCount": 0,
+      "lazyJsBytes": 0,
+      "initialJsBytes": 184543,
+      "cliInitialRaw": "184.65 kB",
+      "cliInitialTransfer": "39.32 kB"
+    },
+    "eager-sibling": {
+      "markerWhere": "initial",
+      "lazyChunkCount": 1,
+      "lazyJsBytes": 94,
+      "initialJsBytes": 186028,
+      "cliInitialRaw": "186.13 kB",
+      "cliInitialTransfer": "40.41 kB"
+    }
+  },
+  "probes": {
+    "built": false,
+    "ts2353": 2,
+    "ng8013": 1,
+    "ng8013Text": true,
+    "ts2353Text": true
+  }
+}
