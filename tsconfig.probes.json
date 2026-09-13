@@ -1,5 +1,5 @@
 /* Program for the deliberately-failing probes. Kept out of tsconfig.app.json so
-   the six variant builds stay clean. */
+   the seven variant builds stay clean. */
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
