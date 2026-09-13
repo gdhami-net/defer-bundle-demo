@@ -9,7 +9,7 @@ import { RATE_BANDS, type RateBand } from './rate-table';
 export const HEAVY_MARKER = 'HEAVY_PAYLOAD_MARKER_5K7QW2';
 
 /**
- * The component every variant defers. Identical in all six builds: the only
+ * The component every variant defers. Identical in all seven builds: the only
  * thing that changes between variants is how the shell around it refers to
  * this class.
  */

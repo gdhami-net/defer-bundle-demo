@@ -2,7 +2,7 @@ import { Component, signal, Type } from '@angular/core';
 import { HeavyComponent } from '../../heavy/heavy';
 
 /**
- * VARIANT 5 — the clean shell plus the class kept as a VALUE in a field, the
+ * VARIANT 6 — the clean shell plus the class kept as a VALUE in a field, the
  * shape a dynamic host keeps when it maps an id onto a component. Not a
  * template element, not a query locator: just the constructor sitting in an
  * array. The template is otherwise identical to the clean variant's.

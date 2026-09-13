@@ -13,8 +13,8 @@ import { ShellComponent as EagerSiblingShell } from './variants/eager-sibling/sh
 /**
  * The bundle half of this demo lives in scripts/check.mjs, which proves WHERE
  * the deferred component's code shipped. This file proves the other half: that
- * all six shells behave the same way at runtime, so the browser gives you no
- * hint that three of them shipped the code eagerly.
+ * all seven shells behave the same way at runtime, so the browser gives you no
+ * hint that four of them shipped the code eagerly.
  *
  * DeferBlockBehavior.Playthrough makes @defer blocks resolve the way they do in
  * a real app rather than jumping straight to their content.

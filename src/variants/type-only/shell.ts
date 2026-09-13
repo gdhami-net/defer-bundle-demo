@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { HeavyComponent } from '../../heavy/heavy';
 
 /**
- * VARIANT 4 — the clean shell plus references to HeavyComponent that live only
+ * VARIANT 5 — the clean shell plus references to HeavyComponent that live only
  * in type position. `lastShown` and the `instance` parameter both name the
  * class; TypeScript erases both, and neither is a template use or a query
  * locator. This one is here for the contrast: it is expected NOT to break

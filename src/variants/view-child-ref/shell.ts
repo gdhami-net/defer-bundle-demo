@@ -1,12 +1,13 @@
 import { Component, signal, viewChild } from '@angular/core';
-import type { ElementRef } from '@angular/core';
 import { HeavyComponent } from '../../heavy/heavy';
 
 /**
- * VARIANT 7 — the same query as the view-child variant, written against a
+ * VARIANT 4 — the same query as the view-child variant, written against a
  * template reference variable instead of the class. The locator is a string, so
- * nothing outside the @defer block names HeavyComponent. This is the workaround
- * the post recommends, measured rather than assumed.
+ * nothing outside the @defer block uses HeavyComponent as a value; the type
+ * argument is erased. A reference variable on a component tag resolves to the
+ * component instance, so that is the type. This is the workaround the post
+ * recommends, measured rather than assumed.
  */
 @Component({
   selector: 'app-shell',
@@ -30,8 +31,8 @@ import { HeavyComponent } from '../../heavy/heavy';
 export class ShellComponent {
   readonly open = signal(false);
 
-  /** A string locator. The class is never named here. */
-  readonly heavyRef = viewChild<ElementRef<HTMLElement>>('heavyRef');
+  /** A string locator. The class appears only as an erased type argument. */
+  readonly heavyRef = viewChild<HeavyComponent>('heavyRef');
 
   resolved(): boolean {
     return this.heavyRef() !== undefined;

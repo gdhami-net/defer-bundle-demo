@@ -3,7 +3,7 @@ import { HeavyComponent } from '../../heavy/heavy';
 import { EagerPanelComponent } from './eager-panel';
 
 /**
- * VARIANT 6 — this file's @defer block is as clean as variant 1's. The extra
+ * VARIANT 7 — this file's @defer block is as clean as variant 1's. The extra
  * reference lives in a DIFFERENT file: the eagerly loaded sibling panel also
  * imports HeavyComponent. The question is whether a rule the Angular guide
  * states per-file survives contact with the bundler.
